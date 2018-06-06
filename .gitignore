@@ -1,0 +1,19 @@
+# GITIGNORE - Hybrid Core
+.DS_Store
+
+# IDE STUFF
+.idea/
+.vscode/
+
+# LOCAL PACKAGE DEPENDENCIES
+node_modules/
+
+# GENERATED DISTRIBUTION
+dist/
+jest_0/
+dist.tar.gz
+
+# DOCS: API, TEST, LINT AND COVERAGE REPORTS
+docs/
+!docs/countly
+package-lock.json
