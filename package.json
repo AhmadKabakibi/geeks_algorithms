@@ -4,7 +4,7 @@
   "description": "geeks algorithms coding problems",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "jest"
   },
   "repository": {
     "type": "git",
@@ -15,5 +15,13 @@
   "bugs": {
     "url": "https://github.com/AhmadKabakibi/geeks_algorithms/issues"
   },
-  "homepage": "https://github.com/AhmadKabakibi/geeks_algorithms#readme"
+  "homepage": "https://github.com/AhmadKabakibi/geeks_algorithms#readme",
+  "devDependencies": {
+    "jest": "^23.1.0"
+  },
+  "dependencies": {
+    "babel-core": "^6.26.3",
+    "babel-jest": "^23.0.1",
+    "regenerator-runtime": "^0.11.1"
+  }
 }
