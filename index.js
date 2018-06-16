@@ -5,6 +5,7 @@ const {singleSellProfit} = require ("./algorithms/dayTradePrice");
 const {isSubsetSum} = require ("./algorithms/subSetSum");
 const {isSubsetSumDynamic} = require ("./algorithms/subSetSum");
 const {countBits} = require ("./algorithms/bitsCount");
+const {CoinChange} = require ("./algorithms/coinChange");
 
 
 //TEST Array2d Reversed rows
@@ -57,3 +58,7 @@ console.log(isSubsetSumDynamic(arr, 20));
 console.log("~~~~~~~~~~~~~~~~~~");
 
 console.log(countBits(11));
+
+console.log("~~~~~~~~~coin change~~~~~~~~~");
+
+console.log(CoinChange([3, 25, 34, 38, 26, 42, 16, 10, 15, 50, 39, 44, 36, 29, 22, 43, 20, 27, 9, 30, 47, 13, 40, 33],222));
