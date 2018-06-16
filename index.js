@@ -2,6 +2,9 @@ const {performOps} = require("./algorithms/array_2d");
 const {numSetBits} = require ("./algorithms/numSetBits");
 const {areConsecutive} = require ("./algorithms/areConsecutive");
 const {singleSellProfit} = require ("./algorithms/dayTradePrice");
+const {isSubsetSum} = require ("./algorithms/subSetSum");
+const {isSubsetSumDynamic} = require ("./algorithms/subSetSum");
+const {countBits} = require ("./algorithms/bitsCount");
 
 
 //TEST Array2d Reversed rows
@@ -39,4 +42,18 @@ console.log("Prices: [23,40,21,67,1,50,22,38,2,62]");
 console.log(singleSellProfit([23,40,21,67,1,50,22,38,2,62]));
 
 
+console.log("~~~~~~~~~~~~~~~~~~~");
 
+//TEST subSetSum
+const arr = [17, 2, 8, 34, 4, 0.5, 42, 6, 3, 7, 15, 14, 9];
+
+console.log(isSubsetSum([3, 34, 4, 12, 5, 2], 119));
+
+console.log("~~~~~~~~~Dynamic~~~~~~~~~~");
+
+console.log(isSubsetSumDynamic(arr, 20));
+
+
+console.log("~~~~~~~~~~~~~~~~~~");
+
+console.log(countBits(11));
