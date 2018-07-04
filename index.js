@@ -6,6 +6,8 @@ const {isSubsetSum} = require ("./algorithms/subSetSum");
 const {isSubsetSumDynamic} = require ("./algorithms/subSetSum");
 const {countBits} = require ("./algorithms/bitsCount");
 const {CoinChange} = require ("./algorithms/coinChange");
+const {lookNSay} = require ("./algorithms/look&Say");
+
 
 
 //TEST Array2d Reversed rows
@@ -62,3 +64,10 @@ console.log(countBits(11));
 console.log("~~~~~~~~~coin change~~~~~~~~~");
 
 console.log(CoinChange([3, 25, 34, 38, 26, 42, 16, 10, 15, 50, 39, 44, 36, 29, 22, 43, 20, 27, 9, 30, 47, 13, 40, 33],222));
+console.log(CoinChange([ 18, 24, 23, 10, 16, 19, 2, 9, 5, 12, 17, 3, 28, 29, 4, 13, 15, 8 ],458));
+
+
+console.log("~~~~~~~~~faceCoin~~~~~~~~~");
+
+
+console.log(lookNSay(5));
