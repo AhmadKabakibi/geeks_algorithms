@@ -7,6 +7,7 @@ const {isSubsetSumDynamic} = require ("./algorithms/subSetSum");
 const {countBits} = require ("./algorithms/bitsCount");
 const {CoinChange} = require ("./algorithms/coinChange");
 const {lookNSay} = require ("./algorithms/look&Say");
+const {spiralOrder} = require ("./algorithms/spiralOrder");
 
 
 
@@ -67,7 +68,20 @@ console.log(CoinChange([3, 25, 34, 38, 26, 42, 16, 10, 15, 50, 39, 44, 36, 29, 2
 console.log(CoinChange([ 18, 24, 23, 10, 16, 19, 2, 9, 5, 12, 17, 3, 28, 29, 4, 13, 15, 8 ],458));
 
 
-console.log("~~~~~~~~~faceCoin~~~~~~~~~");
-
+console.log("~~~~~~~~~lookNSay~~~~~~~~~");
 
 console.log(lookNSay(5));
+
+console.log("~~~~~~~~~spiralOrder~~~~~~~~~");
+
+console.log(spiralOrder([
+    [ 1, 2, 3 ],
+    [ 4, 5, 6 ],
+    [ 7, 8, 9 ]
+   ]));
+
+  console.log(spiralOrder([
+    [1, 2, 3, 4],
+    [5, 6, 7, 8],
+    [9,10,11,12]
+  ]));
