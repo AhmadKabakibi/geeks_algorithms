@@ -8,68 +8,42 @@ const spiralOrder = (matrix) => {
         return [];
     }
 
-    const hs = matrix[0].length;
-    const vs = matrix.length;
-    let er = 0; // end row
-    let ec = hs - 1; // end column
-    let sc = 0; // start column
-    let sr = 0; // start row
-    let rightOffset = 2;
+    let rowStart = 0; 
+    let rowEnd = matrix.length - 1;
+    let colStart = 0;
+    let colEnd = matrix[0].length - 1; 
     const results = [];
 
-    while (results.length < vs * hs) {
-        for (let i = sc; i <= ec; i++) { // going right
-            matrix[sr][i] !== undefined && results.push(matrix[sr][i]);
+    while(rowStart <= rowEnd && colStart <= colEnd) { 
+        //print the first row starting from the left boundary
+        for(let i = colStart; i <= colEnd; i++){
+            results.push(matrix[rowStart][i]);
         }
-
-        // set up for down
-        sr++;
-        sc = ec;
-        er = vs - sr;
-
-        if (results.length === vs * hs) {
-            break;
+        //move start row down by one
+        rowStart++;
+        //print the the cols from the right boundary 
+        for(let i = rowStart; i <= rowEnd; i++){
+            results.push(matrix[i][colEnd]);
         }
-        for (let i = sr; i <= er; i++) { // going down
-            matrix[i][sc] !== undefined && results.push(matrix[i][sc]);
-        }
+        //move colEnd up by one
+        colEnd--;
 
-        // set up for left
-        sr = er;
-        ec = hs - 1 - sc;
-        sc--;
-
-        if (results.length === vs * hs) {
-            break;
+        //check if we exceed the boundries while we're moving up and down
+        if(rowStart <= rowEnd) { 
+            for(let i = colEnd; i >= colStart; i--) {
+                results.push(matrix[rowEnd][i]);
+            }
+            rowEnd--;
         }
-
-        for (let i = sc; i >= ec; i--) { // going left
-            matrix[sr][i] !== undefined && results.push(matrix[sr][i]);
+        if(colStart <= colEnd) { 
+            for(let i = rowEnd; i >= rowStart; i--){
+                results.push(matrix[i][colStart]);
+            }
+            colStart++;
         }
-
-        if (results.length === vs * hs) {
-            break;
-        }
-        // set up for up
-        er = vs - sr;
-        sc = ec;
-        sr--;
-
-        for (let i = sr; i >= er; i--) { // going up
-            matrix[i][sc] !== undefined && results.push(matrix[i][sc]);
-        }
-
-        if (results.length === vs * hs) {
-            break;
-        }
-        // set up for right
-        sc = ec + 1;
-        sr = er;
-        ec = hs - rightOffset;
-        rightOffset++;
     }
-
     return results;
-};
+}
 
 module.exports.spiralOrder = spiralOrder;
+
