@@ -8,6 +8,7 @@ const {countBits} = require ("./algorithms/bitsCount");
 const {CoinChange} = require ("./algorithms/coinChange");
 const {lookNSay} = require ("./algorithms/look&Say");
 const {spiralOrder} = require ("./algorithms/spiralOrder");
+const {simplifyPath} = require ("./algorithms/simplifyPath");
 
 
 
@@ -85,3 +86,5 @@ console.log(spiralOrder([
     [5, 6, 7, 8],
     [9,10,11,12]
   ]));
+
+  console.log(simplifyPath("/a/b/c/d/e/f/g/.././.././.././"));
