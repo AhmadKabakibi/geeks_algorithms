@@ -13,6 +13,7 @@ const {tripletSumZero} = require ("./algorithms/tripletSum");
 const {tripletSumValue} = require ("./algorithms/tripletSum");
 const {numDecodings} = require ("./algorithms/numDecodings");
 const {palindrome} = require ("./algorithms/palindromes");
+const {nthMagicNo} = require ("./algorithms/nthMagicNo");
 
 
 const findTheRunningMedian = require ("./algorithms/findRunningMeadian");
@@ -122,3 +123,8 @@ console.log(spiralOrder([
   console.log("~~~~~~~~~palindrome~~~~~~~~~");
 
   console.log(palindrome("A man, a plan, a canal. Panama"));
+
+
+  console.log("~~~~~~~~~nthMagicNo~~~~~~~~~");
+  console.log(nthMagicNo(5));
+  console.log(nthMagicNo(2));
