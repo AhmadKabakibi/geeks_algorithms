@@ -9,6 +9,12 @@ const {CoinChange} = require ("./algorithms/coinChange");
 const {lookNSay} = require ("./algorithms/look&Say");
 const {spiralOrder} = require ("./algorithms/spiralOrder");
 const {simplifyPath} = require ("./algorithms/simplifyPath");
+const {tripletSumZero} = require ("./algorithms/tripletSum");
+const {tripletSumValue} = require ("./algorithms/tripletSum");
+const {numDecodings} = require ("./algorithms/numDecodings");
+
+
+const findTheRunningMedian = require ("./algorithms/findRunningMeadian");
 
 
 
@@ -88,3 +94,25 @@ console.log(spiralOrder([
   ]));
 
   console.log(simplifyPath("/a/b/c/d/e/f/g/.././.././.././"));
+
+
+  console.log(findTheRunningMedian(['6', '12', '4', '5', '3', '8', '7']));
+
+  console.log(findTheRunningMedian(["10","1","2","3","4","5","6","7","8","9","10"]));
+
+
+  console.log("~~~~~~~~~tripletSumZero~~~~~~~~~");
+  console.log(tripletSumZero([0, -1, 2, -3, 1]));
+
+  console.log("~~~~~~~~~tripletSumValue~~~~~~~~~");
+  console.log(tripletSumValue([1, 4, 45, 6, 10, 8], 19));
+  console.log(tripletSumValue([1, 4, 45, 6, 10, 8], 22));
+
+
+  console.log("~~~~~~~~~numDecodings~~~~~~~~~");
+
+  console.log("Input: 226");
+  console.log("Output: 3");
+  console.log("  Explanation: It could be decoded as 'B' (2 26), 'VF' (22 6), or 'BBF' (2 2 6).')")
+  console.log(numDecodings("226"));
+  console.log(numDecodings("4757562545844617494555774581341211511296816786586787755257741178599337186486723247528324612117156948"));
