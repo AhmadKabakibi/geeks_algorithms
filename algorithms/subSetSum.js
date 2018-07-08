@@ -36,7 +36,7 @@ const isSubsetSumDynamic = function (sequence, sum) {
     }
 
     // fills out first row
-    for (let q = 1; q <= sum; q++){
+    for (let q = 1; q <= sum; q++) {
         matrix[0][q] = (q === sequence[0]) ? 1 : 0;
     }
 
