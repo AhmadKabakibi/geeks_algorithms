@@ -12,6 +12,7 @@ const {simplifyPath} = require ("./algorithms/simplifyPath");
 const {tripletSumZero} = require ("./algorithms/tripletSum");
 const {tripletSumValue} = require ("./algorithms/tripletSum");
 const {numDecodings} = require ("./algorithms/numDecodings");
+const {palindrome} = require ("./algorithms/palindromes");
 
 
 const findTheRunningMedian = require ("./algorithms/findRunningMeadian");
@@ -116,3 +117,8 @@ console.log(spiralOrder([
   console.log("  Explanation: It could be decoded as 'B' (2 26), 'VF' (22 6), or 'BBF' (2 2 6).')")
   console.log(numDecodings("226"));
   console.log(numDecodings("4757562545844617494555774581341211511296816786586787755257741178599337186486723247528324612117156948"));
+
+
+  console.log("~~~~~~~~~palindrome~~~~~~~~~");
+
+  console.log(palindrome("A man, a plan, a canal. Panama"));
