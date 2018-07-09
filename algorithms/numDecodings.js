@@ -43,6 +43,22 @@ X = 0: obviously cannot be decoded into h[XY], at this time NoOfWays[i+1] = NoOf
 Sort out the corner case:
 The conditions under which XY can be decoded are: 9<XY<=26
 The condition that Y can be decoded separately is: Y != '0'
+
+Find number of ways a string can be decoded into, if A=1, B=2, C=3 … Z=25 and encoding number is 123 ways decoding can be done is
+1 2 3 = A B C
+1 23  = A X
+12 3  = L C
+
+How to find total number of decodings possible.
+this is DP problem.
+Start thinking in pattern.if
+1 2 3 is String/Array input.
+– 1 can be decoded in 1 way.
+– 2 cab be decoded in 1 way.
+– 1 2 (along with previous one < 26) so 2 can be decoded in (old number of way + 1) = 2 ways
+– 3 can be decoded in 1 way
+– 2 3 ( can be decoded also as < 26) so total = 3 ways.
+
 */
 
 const numDecodings = (string) => {
