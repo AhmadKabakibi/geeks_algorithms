@@ -21,20 +21,24 @@ Explanation: It could be decoded as "BZ" (2 26), "VF" (22 6), or "BBF" (2 2 6).
 
 Time Complexity of the above solution is O(n) and it requires O(n) auxiliary space.
 
-Suppose the decoding function is h. For a single digit X, it can only be decoded into h[X]. And for a two-digit XY:
-1. If XY<=26, then it can be decoded into h[X], h[Y], h[XY]
-2. Otherwise, it can only be decoded into h[X], h[Y]
-Since it is only required to calculate the most decoding method and does not require the result of each decoding, it is more appropriate and efficient to use DP.
+Suppose the decoding function is h. For a single digit X, it can only be decoded into h[X].
+And for a two-digit XY:
 
-Define dp[i+1] as the number of methods that can decode string s[0:i] of length i+1:
-1. dp[0] = 1，dp[1] = 0
+ 1. If XY<=26, then it can be decoded into h[X], h[Y], h[XY]
+ 2. Otherwise, it can only be decoded into h[X], h[Y]
+
+Since it is only required to calculate the most decoding method and does not require
+the result of each decoding, it is more appropriate and efficient to use NoOfWays.
+
+Define NoOfWays[i+1] as the number of methods that can decode string s[0:i] of length i+1:
+1. NoOfWays[0] = 1，dp[1] = 0
 2. v = s[i-1]*10+s[i]：
-v<=26： dp[i+1] = dp[i] + dp[i-1]
-v>26：dp[i+1] = dp[i]
+v<=26： NoOfWays[i+1] = NoOfWays[i] + NoOfWays[i-1]
+v>26：dp[i+1] = NoOfWays[i]
 
 Corner case: case with 0
-Y = 0: Obviously can't be decoded into h[Y]. At this time, you can only see if h[XY] is valid:dp[i+1] = dp[i-1]
-X = 0: obviously cannot be decoded into h[XY], at this time dp[i+1] = dp[i]
+Y = 0: Obviously can't be decoded into h[Y]. At this time, you can only see if h[XY] is valid:NoOfWays[i+1] = NoOfWays[i-1]
+X = 0: obviously cannot be decoded into h[XY], at this time NoOfWays[i+1] = NoOfWays[i]
 
 Sort out the corner case:
 The conditions under which XY can be decoded are: 9<XY<=26
@@ -42,13 +46,13 @@ The condition that Y can be decoded separately is: Y != '0'
 */
 
 const numDecodings = (string) => {
-    var dp = [],
+    let NoOfWays = [],
         x,
         y,
         cur;
 
-    dp[0] = 1;
-    dp[1] = 1;
+    NoOfWays[0] = 1;
+    NoOfWays[1] = 1;
 
     if (string.length === 0 || string.charAt(0) < '1' || string.charAt(0) > '9') {
         return 0;
@@ -57,23 +61,24 @@ const numDecodings = (string) => {
     for (let i = 1; i < string.length; i++) {
         x = string.charAt(i - 1) - '0';
         y = string.charAt(i) - '0';
+
         cur = x * 10 + y;
-        dp[i + 1] = 0;
+        NoOfWays[i + 1] = 0;
 
         if (cur > 9 && cur <= 26) {
-            dp[i + 1] += dp[i - 1];
+            NoOfWays[i + 1] += NoOfWays[i - 1];
         }
 
         if (y !== 0) {
-            dp[i + 1] += dp[i];
+            NoOfWays[i + 1] += NoOfWays[i];
         }
 
-        if (dp[i + 1] === 0) {
+        if (NoOfWays[i + 1] === 0) {
             return 0;
         }
     }
 
-    return dp[string.length];
+    return NoOfWays[string.length];
 }
 
 module.exports.numDecodings = numDecodings;
